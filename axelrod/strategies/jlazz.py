@@ -1,26 +1,3 @@
-"""Memory One strategies. Note that there are Memory One strategies in other
-files, including titfortat.py and zero_determinant.py"""
-'''
-import warnings
-from typing import Tuple
-
-from axelrod.action import Action
-from axelrod.player import Player
-
-C, D = Action.C, Action.D
-
-from .memoryone import MemoryOnePlayer
-
-
-class jlazz(MemoryOnePlayer):
-
-    name = "jlazz"
-
-    def __init__(self) -> None:
-        four_vector = (1, 0, 1, 0)
-        super().__init__(four_vector)
-        self.set_four_vector(four_vector)
-'''
 from axelrod.action import Action
 C, D = Action.C, Action.D
 
@@ -28,21 +5,6 @@ from .zero_determinant import LRPlayer
 from axelrod import Player
 
 import numpy as np
-'''
-class jlazz(Player):
-    """ A player starts by cooperating and then mimics previous move by opponent. """
-    def strategy(self, opponent):
-        """ Begins by playing 'C': This is affected by the history of the opponent: the strategy simply repeats the last action of the opponent """
-        try:
-            return opponent.history[-1]
-        except IndexError:
-            return C
-
-    def __repr__(self):
-        """ The string method for the strategy. """
-        return 'jlazz'
-'''
-
 
 class jlazz(LRPlayer, Player):
     """
