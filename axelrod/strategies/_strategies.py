@@ -266,6 +266,8 @@ from .worse_and_worse import (
     WorseAndWorse2,
     WorseAndWorse3,
 )
+
+
 from .zero_determinant import (
     ZDGTFT2,
     ZDExtort2,
@@ -277,6 +279,8 @@ from .zero_determinant import (
     ZDMischief,
     ZDSet2,
 )
+
+from .jlazz import jlazz
 
 # Note: Meta* strategies are handled in .__init__.py
 
@@ -499,4 +503,5 @@ all_strategies = [
     ZDMischief,
     ZDSet2,
     e,
+    jlazz
 ]
